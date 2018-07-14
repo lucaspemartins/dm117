@@ -1,7 +1,7 @@
-#Project for DM117 subject
+# Project for DM117 subject
 
-##authors:
+## authors:
 
 - Lucas Eduardo Martins 
 - João Albertino
->>>>>>> initial commit
+
