@@ -54,5 +54,9 @@ public class birdController : MonoBehaviour {
 
         //set the animator to die bird 
         animatorBird.SetTrigger("Die");
+
+
+        //set the message on the top of the screen
+        gameController.gameControllerInstance.BirdDied();
     }
 }
