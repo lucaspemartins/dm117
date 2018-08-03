@@ -11,7 +11,9 @@ public class birdController : MonoBehaviour {
 
     private bool isDead = false; // flag to control when bird die
 
-    Rigidbody2D rigidBodyBird; // holds the bird's rigid body 
+    private Rigidbody2D rigidBodyBird; // holds the bird's rigid body 
+
+    private Animator animatorBird; // holds the animator from bird
 
 	// Use this for initialization
 	void Start () {
@@ -19,8 +21,8 @@ public class birdController : MonoBehaviour {
         //get the rigid body from bird , because it costs a lot in runtime , then we've made it on start of the game
         rigidBodyBird = GetComponent<Rigidbody2D>();
 
-
-		
+        //the same reason for the second component 
+        animatorBird = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -37,6 +39,9 @@ public class birdController : MonoBehaviour {
 
                 //set the force to x scale and 0 to y scale 
                 rigidBodyBird.AddForce(new Vector2(0, keyForce));
+
+                //set the Flap animation using Flap trigger
+                animatorBird.SetTrigger("Flap");
             }
         }
 		
@@ -46,5 +51,8 @@ public class birdController : MonoBehaviour {
 
         //set the flag to true , means the bird is dead
         isDead = true;
+
+        //set the animator to die bird 
+        animatorBird.SetTrigger("Die");
     }
 }
