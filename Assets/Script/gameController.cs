@@ -30,7 +30,7 @@ public class gameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (gameOverFlag && Input.GetKeyDown(KeyCode.UpArrow.ToString())){
+        if (gameOverFlag && Input.GetKeyDown(KeyCode.UpArrow)){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 		
