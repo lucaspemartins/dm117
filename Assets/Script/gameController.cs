@@ -36,7 +36,15 @@ public class gameController : MonoBehaviour {
 		
 	}
 
-
+    public void BirdScore()
+    {
+        if (gameOverFlag)
+        {
+            return;
+        }
+        scoreValue++;
+        scoreText.text = "Score: " + scoreValue.ToString();
+    }
   
     public void BirdDied(){
         gameOverText.SetActive(true);
